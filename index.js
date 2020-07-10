@@ -1,7 +1,7 @@
 const express = require('express');
 const reload = require('reload');
 const User = require('./models/user.model');
-const parser = require('body-parser');
+const parser = require('body-parser').urlencoded({ extended: false });
 
 const app = express();
 
@@ -22,11 +22,15 @@ app.get('/add/:name/:age', (req,res) => {
     const {name,age} = req.params;
     const user = new User(name,age);
     users.push(user);
-    res.send('Thêm thành công');
+    res.redirect('/user');
 });
 
-//res.status(404).send({ name: 'hùng'}));
-// res.send('home', {name: 'hung'}));
+app.post('/add',parser,(req,res) => {
+    const {name,age} = req.body;
+    const user = new User(name,age);
+    users.push(user);
+    res.redirect('/user');
+})
 
 app.listen(3000, () => console.log('Server Started'));
     

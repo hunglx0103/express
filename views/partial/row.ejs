@@ -1,2 +1,8 @@
-<h3 style="color <%= age > 13 ? ' red' : 'blue' " %> "> Tên : <%= name %> </h3>
-<p> Tuổi <%= age %> </p>
+<%
+const {name, age} = user;
+const color = age > 13 ? ' red' : 'blue';
+%>
+    <h3 style="color <%= color " %> "> Tên : <%= name %> </h3>
+    <p> Tuổi <%= age %> </p>
+    <a href="/remove/<%= name %>"> Remove <%= name %> </a>
+
