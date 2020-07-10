@@ -1,0 +1,17 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hunglx0103/express.git",
+  "author": "hunglx0103 <lexuanhung0103@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "reload": "^3.1.0"
+  },
+  "scripts": {
+    "server": "nodemon index.js -e js,ejs"
+  }
+}

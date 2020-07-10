@@ -1,0 +1,8 @@
+<% users.forEach(user => { 
+    const {name, age} = user;
+%>
+    <h1 style="color: <%= age >13 ? 'green' : 'red' %>">  <%= name %>  </h1>
+    <p> <%= age %></p>
+<%})%>
+
+<script src="reload/reload.js"> </script>
